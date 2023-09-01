@@ -1,0 +1,10 @@
+file is the database file name
+description is the database description if empty default to -
+types is to enter custom modes for making the database
+    -e for an example database (EXA)
+    -d for a developer database (DEV)
+    -o for an old database (OLD)
+    -n for no overwrites (NOO)
+owner is the database creator, if empty default to -
+v is the version of when it was made
+cv is the current version it is running
