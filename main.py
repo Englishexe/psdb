@@ -1,2 +1,3 @@
-import psdb.pythondatabase as pythondatabase
-pythondatabase.setup("data")
+import pythondatabase
+pythondatabase.start()
+pythondatabase

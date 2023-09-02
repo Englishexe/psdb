@@ -1,4 +1,4 @@
-database name,database description,type1/type2/type3,owner,v,cv
+database description,type1/type2/type3,owner,v,cv
 {object_name
 varible_name varible_value
 }
