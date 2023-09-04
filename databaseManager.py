@@ -1,1 +1,2 @@
-# TEMPLATE
+print("Not made")
+quit()
