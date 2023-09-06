@@ -20,4 +20,4 @@
 <h3>Change log:</h3>
 <p><code>V0</code><b> - </b> Create</p>
 <p><code>V0.1 ALPHA</code><b> - </b> Initalisation, Networking</p>
-<p><code>V0.1.2-alpha</code><b> - </b> <pre>+ Following SEMVER<br>- <code>rawurlv</code> removed (Replaced by <code>rawurl</code>)</pre>
+<p><s><code>V0.1.2-alpha</code><b> - </b> <pre>+ Following SEMVER<br>- <code>rawurlv</code> removed (Replaced by <code>rawurl</code>)</s></pre>
