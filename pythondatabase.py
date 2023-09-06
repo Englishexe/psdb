@@ -1,8 +1,11 @@
 # NOT COMPLETE DO NOT USE
 """
+Python Simple DataBase - PSDB
+Copyright (C) 2023 Englishexe
+
 Made by Englishexe
 Started development: 01/09/23
-Version 1: --/--/--
+Version 1.0.0: --/--/--
 
 <----------------------------------------->
 
@@ -30,9 +33,9 @@ cv is the current version it is running*
 
 
 PSDB.settings
-networking,autoupdatedatabases,output,detailedscan
+networking,autoupdatedatabases,output,detailedScan
 
-Debug:({v}|{len(databases)}|{networking}|{autoupdatedatabases}|{output}|{detailedscan})
+Debug:({v}|{len(databases)}|{networking}|{autoupdatedatabases}|{output}|{detailedScan})
 
 <----------------------------------------->
 
@@ -47,128 +50,97 @@ settings - time
 """
 import os
 import requests
-v = "0.1" # Editing this version will break networking and much more.
-gv = "https://raw.githubusercontent.com/Englishexe/versions/main/pythonsimpledatabase"
+import sys
+v = "0.1.2-alpha" # Editing this version will break networking and much more.
 rawurl = "https://raw.githubusercontent.com/Englishexe/psdb-program-resources/main/"
-rawurlv = f"https://raw.githubusercontent.com/Englishexe/psdb-program-resources/main/v{v}/"
-rawlegalurl = "https://raw.githubusercontent.com/Englishexe/psdb/main/LICENSE"
 dir = os.getcwd()
 networking = True
 autoupdatedatabases = True
 output = True
-detailedscan = True
+detailedScan = True
 databases = []
 started = False
-if v < 1:
-    print("Warning, you are running a APLHA version.")
-def license():
-    p("""X-------------------------------------------------------------------------------X
-|                         Python Simple DataBase - PSDB                         |
-|                         Copyright (C) 2023 Englishexe                         |
-|                                                                               |
-|     This program is free software: you can redistribute it and/or modify      |
-|     it under the terms of the GNU General Public License as published by      |
-|     the Free Software Foundation, either version 3 of the License, or         |
-|     (at your option) any later version.                                       |
-|                                                                               |
-|     This program is distributed in the hope that it will be useful,           |
-|     but WITHOUT ANY WARRANTY; without even the implied warranty of            |
-|     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the             |
-|     GNU General Public License for more details.                              |
-|                                                                               |
-|     You should have received a copy of the GNU General Public License         |
-|                                                                               |
-|    along with this program.  If not, see https://www.gnu.org/licenses/.       |
-x-------------------------------------------------------------------------------x""")
-def tc():
-    p(f"Please visit the LICENSE here:\n{rawlegalurl}")
-def p(text): # Easier way to print and check if output is enabled.
+def psdbp(prefix, text): # Easier way to print and check if output is enabled.
     """
-    May not work as intended, used throughout the module to print.
-    Do not include this in your program, it may be removed at a future date
-    (Checks if output is enabled in PSDB.settings if yes it will print the provided text.)
+    Do not use
     """
     if output:
-        print(text)
+        print(f"[{prefix}] {text}")
+    None
 def start():
     """
     Initialise PSDB, no arguments are needed.
     """
-    if "PSDB.settings" not in os.listdir():
-        p("PSDB.settings not found, creating one now")
-        p(f"Network:\n    Requesting '{rawurlv}PSDB.settings'\n    Downloading to PSDB.settings")
-        try:
-            file =  requests.get(f"{rawurlv}PSDB.settings")
-            f = open("PSDB.settings", "w")
-            f.write(file.text)
-            f.close()
-        except:
-            p("    Failed to download, check your network connection or download manually.")
-    f = open("PSDB.settings", "r")
-    settings = f.read().split(",")
-    f.close()
-    if settings[0] == "0":
-        global networking
-        networking = False
-    if settings[1] == "0":
-        global autoupdatedatabases
-        autoupdatedatabases = False
-    if settings[2] == "0":
-        global output
-        output = False
-    if settings[3] == "0":
-        global detailedscan
-        detailedscan = False
-    if not output:
-        print("PSDB - Output is disabled, make sure you read the legal T&Cs & Documenation before using.")
-    p("Initialized PSDB.settings\nInitializing legal")
-    license()
-    tc()
-    p("Initialized legal\nInitializing databases")
+    psdbp("    ", "Python Simple DataBase - PSDB\n[    ] Copyright (C) 2023 Englishexe\n[    ] GPL-3.0 License")
+    psdbp("INFO", "Initializing databases")
     if "databases" not in os.listdir():
-        p("'database' directory not found, making one now")
+        psdbp("WARN", "'database' directory not found, making one now")
         os.mkdir("databases")
         os.chdir("databases")
-        p("Making an example database.")
-        p(f"Network:\n    Requesting '{rawurl}exampledatabase.psdb'\n    Downloading to databases\exampledatabase.psdb")
+        psdbp("INFO", "Making an example database.")
+        psdbp("NETW", f"Network:\n[    ]     Requesting '{rawurl}exampledatabase.psdb'\n[    ]     Downloading to databases\exampledatabase.psdb")
         file =  requests.get(f"{rawurl}exampledatabase.psdb")
         f = open("exampledatabase.psdb", "w")
         f.write(file.text)
         f.close()
         os.chdir("..")
-    p("Databases:")
+    psdbp("INFO", "Databases:")
     os.chdir("databases")
     for item in os.listdir():
         if os.path.isfile(item):
             if ".psdb" in item:
                 global databases
                 databases.append(item)
-                p(f"    >{item}")
-                if detailedscan:
+                psdbp(" ^^ ", f"    >{item}")
+                if detailedScan:
                     f = open(item, "r")
                     file = f.read().split(",")
-                    p(f"        ^Desc : {file[0]}")
-                    p(f"        ^Owner: {file[2]}")
-                    p(f"        ^Type : {file[1]}")
-                f.close()
+                    psdbp(" ^^ ", f"        ^Desc : {file[0]}")
+                    psdbp(" ^^ ", f"        ^Owner: {file[2]}")
+                    psdbp(" ^^ ", f"        ^Type : {file[1]}")
+                    f.close()
             else:
-                p(f"    Illegal item in 'databases' ({item})")
+                psdbp("WARN", f"    Illegal item in 'databases' ({item})")
         else:
 
-            p(f"    Illegal item in 'databases' ({item})")
+            psdbp("WARN", f"    Illegal item in 'databases' ({item})")
     os.chdir("..")
-    p("Initialized databases")
-    p("Initializing version")
+    psdbp("INFO", "Initialized databases")
+    psdbp("INFO", "Initializing version")
     if networking:
-        global gv
-        gv = requests.get(gv)
-        gv = gv.text.strip()
-        if v == gv:
-            p("PSDB up to date")
+        # https://raw.githubusercontent.com/Englishexe/psdb-program-resources/main/versions/lastestversion
+        global latestversion
+        latestversion = f"{rawurl}versions/lastestversion"
+        global latestdeveloper
+        latestdeveloper = f"{rawurl}versions/latestdeveloper"
+        global lateststable
+        lateststable = f"{rawurl}versions/lateststable"
+        psdbp("NETW", f"Requesting version information x3")
+        psdbp("    ", f"    Requesting: {latestversion}")
+        latestversion = requests.get(latestversion)
+        latestversion = latestversion.text.strip()
+        psdbp("    ", f"    Requesting: {latestdeveloper}")
+        latestdeveloper = requests.get(latestdeveloper)
+        latestdeveloper = latestdeveloper.text.strip()
+        psdbp("    ", f"    Requesting: {lateststable}")
+        lateststable = requests.get(lateststable)
+        lateststable = lateststable.text.strip()
+        psdbp("INFO", f"Version Information:")
+        psdbp("    ", f"    Latest Stable Version: {lateststable} (Last patch)")
+        psdbp("    ", f"    Latest Version: {latestversion} (Last major update)")
+        psdbp("    ", f"    Latest Developer Version: {latestdeveloper} (Last push to github)")
+        psdbp("    ", f"    Your Version: {v}")
+        if v == lateststable:
+            psdbp("GOOD", f"You are running the lastest stable version ({lateststable})")
+        elif v == latestversion:
+            psdbp("INFO", f"You are running the last major release, it is suggested you update to the last patch Your version: ({v}) - Last stable version: ({lateststable})")
+        elif v == latestdeveloper:
+            psdbp("WARN", f"You are running the last push to GitHub, this is not suggested. Your version: ({v}) - Last stable version: ({lateststable})")
         else:
-            if gv > v:
-                p("Newer version of PSDB available, please update.")
-    p(f"Initialized PSDB V{v}\nDebug:({v}|{len(databases)}|{networking}|{autoupdatedatabases}|{output}|{detailedscan})")
+            psdbp("FAIL", f"Could not determine version. Your version: ({v})")
+
+    psdbp("GOOD", f"Initialized PSDB V{v}")
+    psdbp("DEBU", f"Debug:({v}|{len(databases)}|{networking}|{autoupdatedatabases}|{output}|{detailedScan})")
     global started
     started = True
 def createdb():
@@ -176,35 +148,35 @@ def createdb():
     Not in use
     """
     if not started:
-        p("Action denied\nplease initalize PSDB with pythondatabase.start()")
+        psdbp("FAIL", "Action denied\nplease initalize PSDB with pythondatabase.start()")
         return False
 def removedb():
     """
     Not in use
     """
     if not started:
-        p("Action denied\nplease initalize PSDB with pythondatabase.start()")
+        psdbp("FAIL", "Action denied\nplease initalize PSDB with pythondatabase.start()")
         return False
 def readdb():
     """
     Not in use
     """
     if not started:
-        p("Action denied\nplease initalize PSDB with pythondatabase.start()")
+        psdbp("FAIL", "Action denied\nplease initalize PSDB with pythondatabase.start()")
         return False
 def flagdb():
     """
     Not in use
     """
     if not started:
-        p("Action denied\nplease initalize PSDB with pythondatabase.start()")
+        psdbp("FAIL", "Action denied\nplease initalize PSDB with pythondatabase.start()")
         return False
 def illegal():
     """
     Not in use
     """
     if not started:
-        p("Action denied\nplease initalize PSDB with pythondatabase.start()")
+        psdbp("FAIL", "Action denied\nplease initalize PSDB with pythondatabase.start()")
         return False
 def settings(set0, set1, set2, set3):
     """
@@ -214,32 +186,25 @@ def settings(set0, set1, set2, set3):
     3 - Detailed Scan\n
     Accepts True / False, 4 arguments required
     """
-    f = open("PSDB.settings", "w")
-    if set0:
-        f.write("1")
-    else:
-        f.write("0")
-    f.write(",")
-    if set1:
-        f.write("1")
-    else:
-        f.write("0")
-    f.write(",")
-    if set2:
-        f.write("1")
-    else:
-        f.write("0")
-    f.write(",")
-    if set3:
-        f.write("1")
-    else:
-        f.write("0")
+    if not set0:
+        global networking
+        networking = False
+    if not set1:
+        global autoupdatedatabases
+        autoupdatedatabases = False
+    if not set2:
+        global output
+        output = False
+    if not set3:
+        global detailedScan
+        detailedScan = False
 # --- WARNING ---
 # Developer zone - Do not include these functions in your program, they will be removed later.
 def debug():
     """
     Developer tool - DO NOT USE - (Prints debug info)
     """
-    print(f"{len(databases)}{networking}{autoupdatedatabases}{output}{detailedscan}")
-if __name__ == "__main__": # This code is because I keep running the module not main script. 0_0
-    print("This program must be imported") # , or install our database manager
+    print(f"{len(databases)}{networking}{autoupdatedatabases}{output}{detailedScan}")
+if __name__ == "__main__":
+    print("This program must be imported. As this is a ALPHA build main.py will be started.")
+    os.system("python main.py")
