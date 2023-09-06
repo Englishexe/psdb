@@ -206,5 +206,5 @@ def debug():
     """
     print(f"{len(databases)}{networking}{autoupdatedatabases}{output}{detailedScan}")
 if __name__ == "__main__":
-    print("This program must be imported. As this is a ALPHA build main.py will be started.")
+    print("This program must be imported. As this is an ALPHA build main.py will be started.")
     os.system("python main.py")
