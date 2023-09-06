@@ -39,8 +39,6 @@ T used during development, marks things that need doing or will be fixed in the 
 + Fixed version checking<br>
 + Prefixes added (In progress 8:30 6/9/23)<br>
 T Remove comments that have no purpose<br>
-+ Removed PSDB.settings</pre>
-<p><code>V0.1.3-alpha</code><b> V </b>(Developer only)
-<pre>+ Fixed spelling on endln<br>
-None<br>
-None</pre>
++ Removed PSDB.settings<br>
++ Fixed spelling on endln</pre>
+
