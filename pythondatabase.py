@@ -9,7 +9,7 @@ Version 1.0.0: --/--/--
 import os
 import requests
 import sys
-v = "0.1.2-alpha"
+v = "0.1.3-alpha"
 rawurl = "https://raw.githubusercontent.com/Englishexe/psdb-program-resources/main/"
 dir = os.getcwd()
 networking = True
