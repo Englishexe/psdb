@@ -1,4 +1,3 @@
-# NOT COMPLETE DO NOT USE
 """
 Python Simple DataBase - PSDB
 Copyright (C) 2023 Englishexe
@@ -6,52 +5,11 @@ Copyright (C) 2023 Englishexe
 Made by Englishexe
 Started development: 01/09/23
 Version 1.0.0: --/--/--
-
-<----------------------------------------->
-
-Developer notes:
-
-<------>
-database description,type1/type2/type3,owner,v,cv,
-{object_name
-varible_name varible_value
-}
-<------>
-
-description is the database description if empty default to "-"
-types will be renamed to flags
-types is to enter custom modes for making the database
-    -e for an example database (EXA) - Not used
-    -d for a developer database (DEV) - Not used
-    -o for an old database (OLD) - Not used
-    -n for no overwrites (NOO) - Do not allow overwrites
-    -p protected database - Make deletion harder
-owner is the database creator, if empty default to "-"
-v is the version of when it was made*
-cv is the current version it is running*
-
-
-
-PSDB.settings
-networking,autoupdatedatabases,output,detailedScan
-
-Debug:({v}|{len(databases)}|{networking}|{autoupdatedatabases}|{output}|{detailedScan})
-
-<----------------------------------------->
-
-Preformance:
-
-12,000 11kb (144mb) databases takes
-settings - time
-1,1,1,1 - 2m 47s
-1,1,0,1 - 9s
-1,1,1,0 - 6s
-1,1,0,0 - ^s
 """
 import os
 import requests
 import sys
-v = "0.1.2-alpha" # Editing this version will break networking and much more.
+v = "0.1.2-alpha"
 rawurl = "https://raw.githubusercontent.com/Englishexe/psdb-program-resources/main/"
 dir = os.getcwd()
 networking = True
@@ -60,13 +18,17 @@ output = True
 detailedScan = True
 databases = []
 started = False
-def psdbp(prefix, text): # Easier way to print and check if output is enabled.
+def psdbp(prefix, text): 
     """
     Do not use
     """
     if output:
         print(f"[{prefix}] {text}")
-    None
+def psdbargs():
+    """
+    Returns a string value of the arguments passed to psdb
+    """
+    return sys.argv()
 def start():
     """
     Initialise PSDB, no arguments are needed.
@@ -78,7 +40,8 @@ def start():
         os.mkdir("databases")
         os.chdir("databases")
         psdbp("INFO", "Making an example database.")
-        psdbp("NETW", f"Network:\n[    ]     Requesting '{rawurl}exampledatabase.psdb'\n[    ]     Downloading to databases\exampledatabase.psdb")
+        psdbp("NETW", f"""Network:\n[    ]     Requesting '{rawurl}exampledatabase.psdb'\n
+              [    ]     Downloading to databases\exampledatabase.psdb""")
         file =  requests.get(f"{rawurl}exampledatabase.psdb")
         f = open("exampledatabase.psdb", "w")
         f.write(file.text)
@@ -108,7 +71,6 @@ def start():
     psdbp("INFO", "Initialized databases")
     psdbp("INFO", "Initializing version")
     if networking:
-        # https://raw.githubusercontent.com/Englishexe/psdb-program-resources/main/versions/lastestversion
         global latestversion
         latestversion = f"{rawurl}versions/lastestversion"
         global latestdeveloper
@@ -131,11 +93,13 @@ def start():
         psdbp("    ", f"    Latest Developer Version: {latestdeveloper} (Last push to github)")
         psdbp("    ", f"    Your Version: {v}")
         if v == lateststable:
-            psdbp("GOOD", f"You are running the lastest stable version ({lateststable})")
+            psdbp("GOOD", f"""You are running the lastest stable version ({lateststable})""")
         elif v == latestversion:
-            psdbp("INFO", f"You are running the last major release, it is suggested you update to the last patch Your version: ({v}) - Last stable version: ({lateststable})")
+            psdbp("INFO", f"""You are running the last major release, it is suggested you update to 
+                   last patch Your version: ({v}) - Last stable version: ({lateststable})""")
         elif v == latestdeveloper:
-            psdbp("WARN", f"You are running the last push to GitHub, this is not suggested. Your version: ({v}) - Last stable version: ({lateststable})")
+            psdbp("WARN", f"""You are running the last push to GitHub, this is not suggested. Your 
+                  version: ({v}) - Last stable version: ({lateststable})""")
         else:
             psdbp("FAIL", f"Could not determine version. Your version: ({v})")
 
@@ -198,13 +162,11 @@ def settings(set0, set1, set2, set3):
     if not set3:
         global detailedScan
         detailedScan = False
-# --- WARNING ---
-# Developer zone - Do not include these functions in your program, they will be removed later.
 def debug():
     """
     Developer tool - DO NOT USE - (Prints debug info)
     """
     print(f"{len(databases)}{networking}{autoupdatedatabases}{output}{detailedScan}")
 if __name__ == "__main__":
-    print("This program must be imported. As this is an ALPHA build main.py will be started.")
+    print("This program must be imported. As this is a ALPHA build main.py will be started.")
     os.system("python main.py")
