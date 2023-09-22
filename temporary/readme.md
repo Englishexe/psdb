@@ -226,16 +226,15 @@ I am [Englishexe](https://github.com/Englishexe), a driven and proficient progra
 
 Currently pursuing my academic endeavours at a STEM-focused college, I am constantly honing my skills and expanding my horizons in the ever-evolving landscape of technology. My educational background in STEM not only reinforces my programming capabilities but also fuels my curiosity for innovation.
 
-In my programming journey, I began by exploring languages like Batch, using them as a stepping stone to grasp the fundamentals of scripting and automation. As my passion grew, I delved deeper into Python and HTML, realising their immense potential for diverse applications. These languages allowed me to craft efficient solutions, from Raspberry Pi applications that seamlessly integrate hardware and software to the development of Folder Encryption that enhance data security.
+In my programming journey, I began by exploring languages like Batch, using them as a stepping stone to grasp the fundamentals of scripting and automation. As my passion grew, I delved deeper into Python and HTML, realizing their immense potential for diverse applications. These languages allowed me to craft efficient solutions, from Raspberry Pi applications that seamlessly integrate hardware and software to the development of Folder Encrypters that enhance data security.
 
 By 2023, I had further broadened my skill set to include C++, a language renowned for its power and versatility in software development. This expansion has enabled me to tackle more complex projects and contribute to a wider array of technological domains.
 
 Beyond coding, I possess a unique proficiency as a drone pilot, combining my technical prowess with a deep appreciation for aerial photography and videography. This skill adds a distinctive dimension to my abilities, allowing me to merge technology and artistry seamlessly.
 
-My programming journey is characterised by a relentless pursuit of excellence, a commitment to continuous learning, and an insatiable curiosity about the limitless possibilities that technology offers. I look forward to leveraging my skills and experiences to contribute to innovative projects, collaborate with like-minded professionals, and make a meaningful impact in the ever-evolving world of technology and programming.
+My programming journey is characterized by a relentless pursuit of excellence, a commitment to continuous learning, and an insatiable curiosity about the limitless possibilities that technology offers. I look forward to leveraging my skills and experiences to contribute to innovative projects, collaborate with like-minded professionals, and make a meaningful impact in the ever-evolving world of technology and programming.
 
-Thank you for taking the time to learn about me. If you have any questions contact me.
-
+Thank you for taking the time to learn about me. If you have any questions contact me [Here](#contact-me)
 ###  CLT
 Change Log Template
 #### <u>V0.0.0-alphabeta</u>
@@ -293,5 +292,5 @@ Written by Englishexe\
 Programmed by Englishexe\
 Logo by Commander\
 README Version: 1
-<!--- Documentation written over 22 days ---!>
+<!--- Documentation written over 19 days ---!>
 
