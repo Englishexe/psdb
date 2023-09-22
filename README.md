@@ -1,3 +1,5 @@
+# DO NOT USE THIS DOCUMENTATION
+This documentation is out of date and has non-existing functions
 # Python Simple Database <small><small><small>(PSDB)</small></small></small> Documentation
 ### **Contents:**
 - [PSDB Info](#psdb-info)
@@ -22,6 +24,10 @@
 - [Legal](#legal)
     - [PSDB Legal](#psdb-legal)
     - [License / Copyright](#license)
+
+⚠️ WARNING ⚠️\
+This is moving the the [PSDB Wiki](https://github.com/Englishexe/psdb/wiki)
+
 ## PSDB Info
 Python Simple Database is a Python module that allows data to be stored safely without complication, it requires no knowledge except basic Python skills. PSDB does all the heavy lifting for the programmer while keeping it human-readable. PSDB allows for customisation such as 'detailed scan' and 'output', these allow developers to choose what they see or what the end-user sees. PSDB is good for beginners or small projects as it has a very simple syntax and output. For more information refer to the [documentation](#documentation) or [Contact Me](#contact-me)
 ## Documentation
