@@ -2,7 +2,7 @@
   <img src="https://raw.githubusercontent.com/Englishexe/psdb-program-resources/main/brand/psdb.png" />
 </p>
 
-# DO NOT USE THIS DOCUMENTATION
+# FIND ALL DOCUMENTATION ON THE [WIKI](https://github.com/Englishexe/psdb/wiki/_Home)
 This documentation is out of date and has non-existing functions
 # Python Simple Database <small><small><small>(PSDB)</small></small></small> Documentation
 ### **Contents:**
