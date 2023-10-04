@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Englishexe/psdb-program-resources/main/brand/psdb.png" />
+  <img src="https://raw.githubusercontent.com/Englishexe/psdb-program-resources/main/images/psdb.png" />
 </p>
 
 # FIND ALL DOCUMENTATION ON THE [WIKI](https://github.com/Englishexe/psdb/wiki/_Home)
