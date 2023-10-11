@@ -177,43 +177,43 @@ PSDB follows lightly with semantic versioning, read more [HERE](https://semver.o
 ```
 #### <u>V0.1.2-alpha</u>
 ```diff
---- Following SEMVER
+! Following SEMVER
 -   Removed 'rawurl'
 +   Added copyright to 3-5
 +   Added module sys
 -   Removed copyright box
---- Moved copyright
+! Moved copyright
 +   Main.py runs when pythondatabase.py is run incorrectly
---- Fixed version checking
+! Fixed version checking
 +   Prefixes added
----- Removed random comments
+! Removed random comments
 -   Removed PSDB.settings
 ```
 #### <u>V0.1.3-alpha</u>
 ```diff
 -   Removed random comments
---- Improved documentation
+! Improved documentation
 +   Added PSDBargs function
---- Cleaned header of pythondatabase.py
+! Cleaned header of pythondatabase.py
 -   Removed .gitignore
 ```
 #### <u>V0.1.4-alpha</u>
 ```diff
---- Fixed formatting error in docs (old)
+! Fixed formatting error in docs (old)
 -   Removed automatic main.py execution
 -   Removed dir (not used)
 +   Added "wrong execution" detection
 +   Added psdbnet function (Deals with network requests)
 -   Omitted prefixes (Still see some? Report it in issues)
---- Terminal simplified
---- Transitioned to using psdbnet
+! Terminal simplified
+! Transitioned to using psdbnet
 -   Omitted networking setting, maybe a future update
---- bypassconfirmation --> NoInput (Removes input dialogs)
+! bypassconfirmation --> NoInput (Removes input dialogs)
 +   dbcreate function
 +   The great declutter, unlike my room I have removed everything useless
 -   Remove most prints (Uses psdbp)
 +   Added HideNetworking
---- debugging --> debug
+! debugging --> debug
 -   Removed exampledatabase.psdb, useless + more clutter
 -   Removed psdbargs
 -   Removed sys
@@ -252,7 +252,7 @@ Change Log Template
 ```diff
 + Added feature
 - Removed Feature
---- Change feature
+! Change feature
 ? Temporary fix (Most likely changed in the next version) 
 ```
 ### Sorry!
